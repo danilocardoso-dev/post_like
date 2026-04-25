@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Post {
+  id         String     @id @default(uuid())
+  title      String
+  content    String
+  likesCount Int        @default(0) @map("likes_count")
+  createdAt  DateTime   @default(now()) @map("created_at")
+  postLikes  PostLike[]
+
+  @@index([likesCount(sort: Desc)])
+  @@map("posts")
+}
+
+model PostLike {
+  postId    String   @map("post_id")
+  userId    String   @map("user_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  post      Post     @relation(fields: [postId], references: [id])
+
+  @@id([postId, userId])
+  @@map("post_likes")
+}
