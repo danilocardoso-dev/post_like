@@ -34,7 +34,7 @@ docker run -d --name redis -p 6379:6379 redis:7
 ### 1. Clone o repositório
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/danilocardoso-dev/post_like
 cd post-like
 ```
 
