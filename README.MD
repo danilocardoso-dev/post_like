@@ -1,4 +1,4 @@
-# Backend Likes API
+# API de Curtidas Escalável
 
 API REST em Node.js que simula um sistema de likes em posts, com processamento assíncrono via fila, cache de leitura e controle de concorrência.
 
@@ -34,7 +34,7 @@ docker run -d --name redis -p 6379:6379 redis:7
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/danilocardoso-dev/post_like
+git clone https://github.com/danilocardoso-dev/api-curtidas-escalavel
 cd post-like
 ```
 
