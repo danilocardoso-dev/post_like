@@ -35,7 +35,7 @@ docker run -d --name redis -p 6379:6379 redis:7
 
 ```bash
 git clone https://github.com/danilocardoso-dev/api-curtidas-escalavel
-cd post-like
+cd api-curtidas-escalavel
 ```
 
 ### 2. Instale as dependências
